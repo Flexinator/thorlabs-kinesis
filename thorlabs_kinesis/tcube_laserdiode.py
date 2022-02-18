@@ -151,7 +151,7 @@ TLI_UninitializeSimulations = bind(lib, "TLI_UninitializeSimulations", None, Non
 
 LD_CheckConnection = bind(lib, "LD_CheckConnection", [POINTER(c_char)], c_bool)
 LD_ClearMessageQueue = bind(lib, "LD_ClearMessageQueue", [POINTER(c_char)], None)
-LD_Close = bind(lib, "LD_Close", [POINTER(c_char)], c_bool)
+LD_Close = bind(lib, "LD_Close", [POINTER(c_char)], None)
 LD_Disable = bind(lib, "LD_Disable", [POINTER(c_char)], c_short)
 LD_DisableOutput = bind(lib, "LD_DisableOutput", [POINTER(c_char)], c_short)
 LD_Enable = bind(lib, "LD_Enable", [POINTER(c_char)], c_short)

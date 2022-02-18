@@ -41,12 +41,14 @@ from ctypes.wintypes import (
 dllpath = 'C:\\Program Files\\Thorlabs\\Kinesis'
 os.add_dll_directory(dllpath)
 
-lib = cdll.LoadLibrary("Thorlabs.MotionControl.TCube.TEC.dll")
+lib = cdll.LoadLibrary("Thorlabs.MotionControl.KCube.LaserDiode.dll")
 
+TLI_InitializeSimulations = bind(lib, "TLI_InitializeSimulations", None, None)
+TLI_UninitializeSimulations = bind(lib, "TLI_UninitializeSimulations", None, None)
 
 TLI_BuildDeviceList = bind(lib, "TLI_BuildDeviceList", None, c_short)
 
-LD_Open = bind(lib, "LD_Open", [POINTER(c_char)], c_bool)
+LD_Open = bind(lib, "LD_Open", [POINTER(c_char)], c_short)
 LD_Close = bind(lib, "LD_Close", [POINTER(c_char)], None)
 LD_Disable = bind(lib, "LD_Disable", [POINTER(c_char)], c_short)
 LD_DisableOutput = bind(lib, "LD_DisableOutput", [POINTER(c_char)], c_short)
